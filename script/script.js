@@ -11,8 +11,9 @@ function success(pos) {
   $('.js-long').text(crd.longitude);
   $('.js-acc').text(crd.accuracy + ' Meter');
 
-  .ajax({
+  $.ajax({
   	url: 'https://api.forecast.io/forecast/ab419d730e6a3a6d24ebd46eca0c1d57/37.8267,-122.423',
+  	jsonp: 'callback',
   	success: function(data) {
   		console.log(data);
   	}
