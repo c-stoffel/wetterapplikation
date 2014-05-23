@@ -33,6 +33,7 @@ function success(pos) {
   	},
   	success: function(data) {
   		console.log(data);
+  		$('js-addr').text(data.results[0].formatted_address);
   	}
   });
 
