@@ -13,7 +13,7 @@ function success(pos) {
   // console.log('More or less ' + crd.accuracy + ' meters.');
   $('.js-lat').text(crd.latitude);
   $('.js-long').text(crd.longitude);
-  $('.js-acc').text(crd.accuracy + 'Meter');
+  $('.js-acc').text(crd.accuracy + ' Meter');
 };
 
 function error(err) {
