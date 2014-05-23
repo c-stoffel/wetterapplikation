@@ -7,13 +7,16 @@ var options = {
 function success(pos) {
   var crd = pos.coords;
 
-  console.log('Your current position is:');
-  // console.log('Latitude : ' + crd.latitude);
-  // console.log('Longitude: ' + crd.longitude);
-  // console.log('More or less ' + crd.accuracy + ' meters.');
   $('.js-lat').text(crd.latitude);
   $('.js-long').text(crd.longitude);
   $('.js-acc').text(crd.accuracy + ' Meter');
+
+  .ajax({
+  	url: 'https://api.forecast.io/forecast/ab419d730e6a3a6d24ebd46eca0c1d57/37.8267,-122.423',
+  	success: function(data) {
+  		console.log(data);
+  	}
+  });
 };
 
 function error(err) {
