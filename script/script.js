@@ -22,6 +22,22 @@ function success(pos) {
   		$('.js-wind').text(data.currently.windSpeed + ' km/h');
   	}
   });
+
+  $.ajax({
+  	url: 'https://maps.googleapis.com/maps/api/geocode/json',
+  	
+  	data: {
+  		latlng: crd.latitude + ',' + crd.longitude,
+  		senseon: true
+
+  	},
+  	success: function(data) {
+  		console.log(data);
+  	}
+  });
+
+
+
 };
 
 function error(err) {
