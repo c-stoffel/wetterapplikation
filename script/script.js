@@ -19,6 +19,7 @@ function success(pos) {
   	success: function(data) {
   		console.log(data);
   		$('.js-temp').text(data.currently.apparentTemperature);
+  		$('js-wind').text(data.currently.windSpeed);
   	}
   });
 };
