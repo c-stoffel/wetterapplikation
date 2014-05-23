@@ -1,4 +1,4 @@
-.js-long, .js-lat, .js-acc, .js-temp {
+.js-long, .js-lat, .js-acc, .js-temp, .js-wind {
 	color: green;
 	background-color: black;
 } 
