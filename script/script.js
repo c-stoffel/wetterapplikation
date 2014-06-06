@@ -37,8 +37,6 @@ function success(pos) {
   	}
   });
 
-
-
 };
 
 function error(err) {
@@ -69,6 +67,8 @@ $('.js-custom').on('click', 'a', function(event) {
     }
   });
 });
+
+
 
 
 
