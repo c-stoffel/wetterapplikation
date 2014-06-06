@@ -55,20 +55,19 @@ $('.js-custom').on('click', 'a', function(event) {
 
 
 
-  $.ajax({
-    url: 'http://maps.googleapis.com/mas/api/geocode/json',
-    data: {
-      address: address,
-      sensor: false
-
-    },
-    dataType: 'jsonp',
-    success: function(data){
-      console.log(data);
+    $.ajax({
+      url: 'http://maps.googleapis.com/mas/api/geocode/json',
+      data: {
+        address: address,
+        sensor: false
+      },
+      success: function(data){
+        console.log(data);
+        $('.js-custom-result').text(data.results[0].geometry.location.lat + ',' + data.results[0].geometry.location.lng);
+      };
     }
+  });
 
-    });
-});
 
 
 
