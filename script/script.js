@@ -55,6 +55,7 @@ $.ajax({
   },
   success: function(data){
     console.log(data);
+    $('.js-custom').text(data.results[0].formatted_address);
   }
 
 });
