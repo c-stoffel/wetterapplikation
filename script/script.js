@@ -47,6 +47,8 @@ function error(err) {
 
 navigator.geolocation.getCurrentPosition(success, error, options);
 
+
+
 $('.js-custom').on('click', 'a', function(event) {
   event.preventDefault();
   var address = $('input', '.js-custom').val();
@@ -58,7 +60,9 @@ $('.js-custom').on('click', 'a', function(event) {
     data: {
       address: address,
       sensor: false
+
     },
+    dataType: 'jsonp',
     success: function(data){
       console.log(data);
     }
