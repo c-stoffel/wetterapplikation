@@ -48,26 +48,27 @@ function error(err) {
 navigator.geolocation.getCurrentPosition(success, error, options);
 
 
-
 $('.js-custom').on('click', 'a', function(event) {
   event.preventDefault();
+
   var address = $('input', '.js-custom').val();
 
-
-
-    $.ajax({
-      url: 'http://maps.googleapis.com/mas/api/geocode/json',
-      data: {
-        address: address,
-        sensor: false
-      },
-      success: function(data){
-        console.log(data);
-        $('.js-custom-result').text(data.results[0].geometry.location.lat + ',' + data.results[0].geometry.location.lng);
-      };
+  $.ajax({
+    url: 'http://maps.googleapis.com/maps/api/geocode/json',
+    data: {
+      address: address,
+      sensor: false
+    },
+    success: function(data) {
+      console.log(data);
+      $('.js-custom-result').text(
+        data.results[0].geometry.location.lat +
+        ',' +
+        data.results[0].geometry.location.lng
+      );
     }
   });
-
+});
 
 
 
