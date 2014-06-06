@@ -46,3 +46,20 @@ function error(err) {
 };
 
 navigator.geolocation.getCurrentPosition(success, error, options);
+
+$.ajax({
+  url: 'http://maps.googleapis.com/mas/api/geocode/json',
+  data: {
+    address: 'Hintere Bahnhofstrasse 85, 5000+Aarau',
+    sensor: false
+  },
+  success: function(data){
+    console.log(data);
+  }
+
+});
+
+
+
+
+
