@@ -13,7 +13,6 @@ function success(pos) {
 
   $.ajax({
    url: 'https://api.forecast.io/forecast/ab419d730e6a3a6d24ebd46eca0c1d57/' + crd.latitude + ',' + crd.longitude,
-  
    data: {units : 'ca'},
    dataType: 'jsonp',
    success: function(data) {
@@ -64,6 +63,16 @@ $('.js-custom').on('click', 'a', function(event) {
         ',' +
         data.results[0].geometry.location.lng
       );
+      $.ajax({
+      url: 'https://api.forecast.io/forecast/ab419d730e6a3a6d24ebd46eca0c1d57/' + crd.latitude + ',' + crd.longitude,
+      data: {units : 'si'},
+      dataType: 'jsonp',
+      success: function(data) {
+      console.log(data);
+      $('.js-temp').text(data.currently.apparentTemperature);
+      $('.js-wind').text(data.currently.windSpeed + ' km/h');
+   }
+  });
     }
   });
 });
